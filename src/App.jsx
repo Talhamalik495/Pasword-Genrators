@@ -1,20 +1,25 @@
-import { useCallback, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-const [length,setLength]=useState=(10)
-const [number,setNumber]=useState=(false)
-const [character,setCharacter]=useState=(false)
-const [Password,setPassword]=useState=("")
-let passworGenrat=useCallback(()=>{
-  let newPasword=""
-  let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-  let num=12345678910
-  let specialCharacter="!@#$%^&*-_+=[]{}~`"
-  if (num) str+=num
-  if (character) str+=specialCharacter
-  },[])
+import React, { useState, useCallback } from 'react';
+import './App.css';
+
 function App() {
+  let [length,setLength]= useState(10)
+  let [number,setNumber]= useState(false)
+  let [character,setCharacter]= useState(false)
+  let [Password,setPassword]= useState("")
+  let passworGenrat=useCallback(()=>{
+    let newPasword=""
+    let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    let num=12345678910
+    let specialCharacter="!@#$%^&*-_+=[]{}~`"
+    if (number) str+=num
+    if (character) str+=specialCharacter
+    if (character) str+=specialCharacter
+    for (let i = 0; i < str.length; i++) {
+      const char= Math.floor(Math.random()*str.length)
+  
+      
+    }
+    },[])
   return (
     <>
   <h1 className='text-white text-center font-bold font-mono text-4xl'>Password Genrators</h1>
