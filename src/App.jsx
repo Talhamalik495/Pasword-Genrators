@@ -14,7 +14,7 @@ function App() {
     if (number) str+=num
     if (character) str+=specialCharacter
     for (let i = 1; i <= length; i++) {
-      console.log(str);
+      console.log(i);
       const char1=Math.random()*str.length
       console.log(char1);
       const char= Math.floor(Math.random()*str.length+1)
@@ -32,24 +32,26 @@ function App() {
   <br />
   <br />
   
-  <div className='text-white max-w-xl mx-auto bg-gray-700 flex px-8 py-10 flex-col rounded-lg shadow-md gap-2' >
-  <h1 className='text-white text-center font-bold font-mono text-4xl'>Password Genrators</h1>
-  <br />
+  <div className='text-white max-w-xl mx-auto bg-gray-700 flex px-8 py-10 flex-col rounded-lg shadow-md gap-5' >
+  <h1 className='text-white text-center font-bold font-serif text-4xl'>Password Genrators</h1>
   <div className='flex justify-center align-middle gap-2'>
-<input className='w-full outline-none text-black  bg-white rounded-lg h-10' type="text "placeholder='password' readOnly value={Password}/>
+<input className='w-full outline-none text-black  bg-white rounded-lg h-10 px-2' type="text "placeholder='password' readOnly value={Password}/>
 <button className='w-40 h-10 rounded-md  bg-blue-400 text-white'>Copy</button>
 </div>
-<div className='flex gap-4'>
-<label htmlFor="character">character</label>
-<input defaultChecked={character}  type="checkbox" id='character'  value={character}  onChange={(e)=>setCharacter((prev)=> !prev)}/>
-</div>
-<div className='flex gap-x-7'>
-<label htmlFor="number">number</label>
-<input type="checkbox" defaultChecked={number} id='number' value={number} onChange={(e)=>setNumber((prev)=> !prev)} />
-</div>
-<div className='flex gap-2'>
+<div className='flex gap-5'>
+<div className='flex gap-1'>
   <label>length:{length}</label>
   <input type="range" value={length} min={6} max={100} onChange={(e)=> setLength(e.target.value)}/>
+</div>
+
+<div className='flex gap-1'>
+<label htmlFor="number">Number</label>
+<input type="checkbox" defaultChecked={number} id='number' value={number} onChange={(e)=>setNumber((prev)=> !prev)} />
+</div>
+<div className='flex gap-1'>
+<label htmlFor="character">Character</label>
+<input defaultChecked={character}  type="checkbox" id='character'  value={character}  onChange={(e)=>setCharacter((prev)=> !prev)}/>
+</div>
 </div>
   </div>
     </>
